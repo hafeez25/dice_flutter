@@ -41,15 +41,18 @@ class MyDice extends StatelessWidget {
       child: Row(
         children: [
           Expanded(
-              child: Padding(
-                padding: const EdgeInsets.all(16.0),
-                child: Image.asset('images/dice1.png'),
-              )),
+              child: TextButton(
+
+                onPressed: (){
+                  print('Left Button Pressed!');
+                },
+                  child: Image.asset('images/dice1.png'))),
           Expanded(
-            child: Padding(
-              padding: const EdgeInsets.all(16.0),
-              child: Image.asset('images/dice6.png'),
-            ),
+            child: TextButton(
+              onPressed: (){
+                print('Right Button Pressed');
+              },
+                child: Image.asset('images/dice6.png')),
           )
         ],
       ),
