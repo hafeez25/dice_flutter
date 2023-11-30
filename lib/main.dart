@@ -34,7 +34,16 @@ class MyApp extends StatelessWidget {
   }
 }
 
-class MyDice extends StatelessWidget {
+class MyDice extends StatefulWidget {
+  const MyDice({super.key});
+
+  @override
+  State<MyDice> createState() => _MyDiceState();
+}
+
+class _MyDiceState extends State<MyDice> {
+  int leftButton = 1;
+  int rightButton = 3;
   @override
   Widget build(BuildContext context) {
     return Center(
@@ -43,19 +52,28 @@ class MyDice extends StatelessWidget {
           Expanded(
               child: TextButton(
 
-                onPressed: (){
-                  print('Left Button Pressed!');
-                },
-                  child: Image.asset('images/dice1.png'))),
+                  onPressed: (){
+                    print('Left Button Pressed!');
+                    setState(() {
+                      leftButton=2;
+                    });
+                  },
+                  child: Image.asset('images/dice$leftButton.png'))),
           Expanded(
             child: TextButton(
-              onPressed: (){
-                print('Right Button Pressed');
-              },
-                child: Image.asset('images/dice6.png')),
+                onPressed: (){
+                  print('Right Button Pressed');
+                  setState(() {
+                    rightButton=5;
+                  });
+                },
+                child: Image.asset('images/dice$rightButton.png')),
           )
         ],
       ),
     );
   }
 }
+
+
+
