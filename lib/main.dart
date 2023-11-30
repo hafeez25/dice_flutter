@@ -50,8 +50,8 @@ class _MyDiceState extends State<MyDice> {
   Widget build(BuildContext context) {
     void generateRandomNumber() {
       setState(() {
-        leftButton = Random().nextInt(5) + 1;
-        rightButton = Random().nextInt(5) + 1;
+        leftButton = Random().nextInt(6) + 1;
+        rightButton = Random().nextInt(6) + 1;
       });
     }
 
