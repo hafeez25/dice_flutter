@@ -17,9 +17,9 @@ class MyApp extends StatelessWidget {
         useMaterial3: true,
       ),
       home:Scaffold(
-        backgroundColor: Colors.red,
-          appBar: AppBar(title: Text('Dice App'),
-          backgroundColor: Colors.green,),
+        backgroundColor: Colors.lightBlueAccent,
+          appBar: AppBar(title: Center(child: Text('Dice',style: TextStyle(fontSize: 35, fontWeight: FontWeight.bold, color: Colors.white),)),
+          backgroundColor: Colors.blue,),
           body:MyDice()),
 
     );
