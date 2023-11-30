@@ -16,21 +16,36 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.lightGreenAccent),
         useMaterial3: true,
       ),
-      home:Scaffold(
-        backgroundColor: Colors.lightBlueAccent,
-          appBar: AppBar(title: Center(child: Text('Dice',style: TextStyle(fontSize: 35, fontWeight: FontWeight.bold, color: Colors.white),)),
-          backgroundColor: Colors.blue,),
-          body:MyDice()),
-
+      home: Scaffold(
+          backgroundColor: Colors.lightBlueAccent,
+          appBar: AppBar(
+            title: Center(
+                child: Text(
+              'Dice',
+              style: TextStyle(
+                  fontSize: 35,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.white),
+            )),
+            backgroundColor: Colors.blue,
+          ),
+          body: MyDice()),
     );
   }
 }
 
 class MyDice extends StatelessWidget {
   @override
-  Widget build(BuildContext context){
-    return Container();
+  Widget build(BuildContext context) {
+    return Center(
+      child: Row(
+        children: [
+          Expanded(child: Image.asset('images/dice1.png')),
+          Expanded(child: 
+            Image.asset('images/dice6.png'),
+          )
+        ],
+      ),
+    );
   }
-
 }
-
