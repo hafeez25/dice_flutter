@@ -20,7 +20,7 @@ class MyApp extends StatelessWidget {
       home: Scaffold(
           backgroundColor: Colors.lightBlueAccent,
           appBar: AppBar(
-            title: Center(
+            title: const Center(
                 child: Text(
               'Dice',
               style: TextStyle(
@@ -48,24 +48,23 @@ class _MyDiceState extends State<MyDice> {
 
   @override
   Widget build(BuildContext context) {
-    void generateRandomNumber(){
+    void generateRandomNumber() {
       setState(() {
-        leftButton=Random().nextInt(5)+1;
-        rightButton=Random().nextInt(5)+1;
-
+        leftButton = Random().nextInt(5) + 1;
+        rightButton = Random().nextInt(5) + 1;
       });
     }
+
     return Center(
       child: Row(
         children: [
           Expanded(
               child: TextButton(
-
                   onPressed: generateRandomNumber,
                   child: Image.asset('images/dice$leftButton.png'))),
           Expanded(
             child: TextButton(
-                onPressed:generateRandomNumber,
+                onPressed: generateRandomNumber,
                 child: Image.asset('images/dice$rightButton.png')),
           )
         ],
@@ -73,6 +72,3 @@ class _MyDiceState extends State<MyDice> {
     );
   }
 }
-
-
-
