@@ -44,35 +44,28 @@ class MyDice extends StatefulWidget {
 
 class _MyDiceState extends State<MyDice> {
   int leftButton = 1;
-  int rightButton = 3;
+  int rightButton = 1;
 
   @override
   Widget build(BuildContext context) {
+    void generateRandomNumber(){
+      setState(() {
+        leftButton=Random().nextInt(5)+1;
+        rightButton=Random().nextInt(5)+1;
+
+      });
+    }
     return Center(
       child: Row(
         children: [
           Expanded(
               child: TextButton(
 
-                  onPressed: (){
-                    print('Left Button Pressed!');
-                    setState(() {
-                      leftButton=Random().nextInt(5)+1;
-                      rightButton=Random().nextInt(5)+1;
-
-                    });
-                  },
+                  onPressed: generateRandomNumber,
                   child: Image.asset('images/dice$leftButton.png'))),
           Expanded(
             child: TextButton(
-                onPressed: (){
-                  print('Right Button Pressed');
-                  setState(() {
-                    rightButton=Random().nextInt(5)+1;
-                    leftButton=Random().nextInt(5)+1;
-
-                  });
-                },
+                onPressed:generateRandomNumber,
                 child: Image.asset('images/dice$rightButton.png')),
           )
         ],
